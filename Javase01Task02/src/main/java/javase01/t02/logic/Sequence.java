@@ -7,7 +7,6 @@ import java.math.RoundingMode;
 public class Sequence {
     private final int SCALE;
 
-
     public Sequence(int SCALE) {
         this.SCALE = SCALE;
     }

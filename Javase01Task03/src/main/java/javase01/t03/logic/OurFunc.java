@@ -5,9 +5,13 @@ public class OurFunc {
         return Math.tan(2*argument)-3;
     }
 
-    public void printSteps(double step, double a, double b){
-        for(double i = a; i<=b; i+=step){
-            System.out.println("x= "+String.format("%.4f",i)+"\ty= "+String.format("%.4f",getValue(i)));
+    public void printTable(double step, double beginArg, double endArg){
+        if((beginArg<endArg)&&(step<(endArg-beginArg))) {
+            for (double i = beginArg; i <= endArg; i += step) {
+                System.out.println("x= " + String.format("%.4f", i) + "\ty= " + String.format("%.4f", getValue(i)));
+            }
+        } else {
+            System.out.println("There is no logic in this params. Cant build table.");
         }
     }
 }
