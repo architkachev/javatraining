@@ -5,6 +5,7 @@ import javase01.t02.logic.Sequence;
 import java.math.BigDecimal;
 
 //E enter as first parameter (epsilon) of application between 0 and 1
+// good example epsilon = 0.0100000000000000000000000000000000000000000000000000001
 public class Main {
     public static void main(String [] args){
         if(args.length==1){
@@ -17,7 +18,7 @@ public class Main {
                 System.out.println("Parameter epsilon must be between 0 and 1, for example 0.0000022354556");
             }
         } else {
-            System.out.println("Program must have only one parameter - epsilon");
+            System.out.println("Program must have one parameter - epsilon");
         }
     }
 }

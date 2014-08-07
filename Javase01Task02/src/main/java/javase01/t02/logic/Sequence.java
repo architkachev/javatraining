@@ -5,24 +5,33 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 public class Sequence {
-    public static BigDecimal getIElement(BigInteger i){
-       BigDecimal iter = new BigDecimal(i);
-       BigDecimal iterInc = iter.add(BigDecimal.ONE);
-       BigDecimal chastnoe = (BigDecimal.ONE).divide(iterInc,100, RoundingMode.CEILING);
-       BigDecimal element = chastnoe.pow(2);
-       return element;
+    private final int SCALE;
+
+
+    public Sequence(int SCALE) {
+        this.SCALE = SCALE;
+    }
+
+    public Sequence() {
+        this.SCALE = 50;
+    }
+
+    public BigDecimal getElement(BigInteger position){
+       BigDecimal positionDec = new BigDecimal(position);
+       BigDecimal incPositionDec = positionDec.add(BigDecimal.ONE);
+       BigDecimal quotient = (BigDecimal.ONE).divide(incPositionDec, this.SCALE, RoundingMode.CEILING);
+       return quotient.pow(2);
     }
 
     public BigInteger positionOfElement(BigDecimal epsilon){
-        //int i = 0;
-        BigInteger ind = new BigInteger(String.valueOf(0));
+        BigInteger index = BigInteger.ONE;
         while(true){
-            BigDecimal bd = getIElement(ind);
-            ind = ind.add(BigInteger.ONE);
-            System.out.println(bd.toString());
-            if (epsilon.compareTo(bd)==1){
-                return ind ;
+            BigDecimal element = this.getElement(index);
+            System.out.println(element.toString());
+            if (epsilon.compareTo(element)==1){
+                return index;
             }
+            index = index.add(BigInteger.ONE);
         }
     }
 }
