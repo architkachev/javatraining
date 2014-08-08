@@ -4,8 +4,8 @@ public class Matrix {
     int [][] matrix;
 
     public Matrix(int n, int m) {
-        int [][] mat = new int [n][m];
-        this.matrix = mat;
+            int [][] mat = new int [n][m];
+            this.matrix = mat;
     }
 
     public void printMatrix(){
