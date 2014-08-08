@@ -7,7 +7,7 @@ public class Main {
         if(args.length==1){
             try{
                 int halfSize = Integer.parseInt(args[0]);
-                MyArray myArray = new MyArray(halfSize, 1000);
+                MyArray myArray = new MyArray(MyArray.generateArray(halfSize, 1000));
                 myArray.printArray(4);
                 System.out.println("MaxSum: "+ String.format("%.4f", myArray.findMaxSum()));
             } catch (Exception e){

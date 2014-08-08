@@ -1,17 +1,21 @@
 package javase01.t03.logic;
 
+import java.util.ArrayList;
+
 public class OurFunc {
     public static double getValue(double argument){
         return Math.tan(2*argument)-3;
     }
 
-    public void printTable(double step, double beginArg, double endArg){
+    public static ArrayList<double[]> getTable(double step, double beginArg, double endArg) throws Exception {
         if((beginArg<endArg)&&(step<(endArg-beginArg))) {
+            ArrayList<double[]> table = new ArrayList<double[]>();
             for (double i = beginArg; i <= endArg; i += step) {
-                System.out.println("x= " + String.format("%.4f", i) + "\ty= " + String.format("%.4f", getValue(i)));
+                table.add(new double[]{i, getValue(i)});
             }
+            return table;
         } else {
-            System.out.println("There is no logic in this params. Cant build table.");
+            throw new Exception("Parameters are out of logic.");
         }
     }
 }

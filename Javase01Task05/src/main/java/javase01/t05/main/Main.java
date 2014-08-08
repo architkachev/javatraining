@@ -7,15 +7,11 @@ public class Main {
         if(args.length==1){
             try{
                 int n = Integer.parseInt(args[0]);
-                if(n>1){
-                    Matrix matrix = new Matrix(n,n);
-                    matrix.setKrestX();
-                    matrix.printMatrix();
-                } else {
-                    System.out.println("Size of array must be positive and greater then 1.");
-                }
+                Matrix matrix = new Matrix(n,n);
+                matrix.setKrestX();
+                Matrix.printMatrixInConsole(matrix.getMatrix());
             } catch (Exception e){
-                System.out.println("Integer parameter!");
+                System.out.println(e.getMessage());
             }
         } else{
             System.out.println("Program must have 1 parameter N");

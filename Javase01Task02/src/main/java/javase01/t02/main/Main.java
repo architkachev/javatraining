@@ -1,7 +1,6 @@
 package javase01.t02.main;
 
 import javase01.t02.logic.Sequence;
-
 import java.math.BigDecimal;
 
 //E enter as first parameter (epsilon) of application between 0 and 1
@@ -9,14 +8,20 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String [] args){
         if(args.length==1){
-            if(args[0].matches("0\\.[\\d]+")){
-                BigDecimal epsilon = new BigDecimal(args[0]);
-                System.out.println("Epsilon:   " + epsilon.toString());
-                Sequence s = new Sequence();
-                System.out.println("Position: "+ s.positionOfElement(epsilon));
-            } else {
-                System.out.println("Parameter epsilon must be between 0 and 1, for example 0.0000022354556");
+            BigDecimal epsilon = new BigDecimal(args[0]);
+            System.out.println("Epsilon:   " + epsilon.toString());
+            Sequence s = new Sequence();
+
+            try {
+                int pos = s.getPositionOfElement(epsilon);
+                System.out.println("Position: " + pos);
+                for (BigDecimal bd: s.getListOfElements(pos)){
+                    System.out.println(bd);
+                }
+            } catch (Exception e){
+                System.out.println(e.getMessage());
             }
+
         } else {
             System.out.println("Program must have one parameter - epsilon");
         }

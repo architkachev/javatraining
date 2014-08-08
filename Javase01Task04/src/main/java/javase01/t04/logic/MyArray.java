@@ -2,14 +2,19 @@ package javase01.t04.logic;
 
 public class MyArray {
     private double [] array;
-    private final double MAX_VALUE;
-    public MyArray(int halfSize, double maxValue) {
-        MAX_VALUE = maxValue;
+
+    public static double[] generateArray(int halfSize, double maxValue) {
         double [] a = new double[halfSize*2];
         for (int i =0; i<a.length; i++){
-            a[i]= Math.random()*(MAX_VALUE*2)-MAX_VALUE;
+            a[i]= Math.random()*(maxValue*2)-maxValue;
         }
-        this.array = a;
+        return a;
+    }
+    public MyArray(double[] array){
+        double [] ar = new double[array.length];
+        for(int i = 0; i<ar.length; i++){
+            ar[i]=array[i];
+        }
     }
 
     public void printArray(int scale){
