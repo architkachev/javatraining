@@ -1,65 +1,65 @@
 package javase01.t06.main;
 
 import javase01.t06.logic.Note;
-import javase01.t06.logic.NoteBookManager;
+import javase01.t06.logic.NoteBook;
 import java.util.List;
 
 public class Main {
     public static void main(String [] args){
-        NoteBookManager manager = new NoteBookManager();
-        manager.addNote("String0");
-        manager.addNote("String1");
-        manager.addNote("String2");
-        manager.addNote("String3");
-        manager.addNote("String4");
-        manager.addNote("String5");
-        manager.addNote("String6");
-        manager.addNote("String7");
-        manager.addNote("String8");
-        manager.addNote("String9");
-        manager.addNote("String10");
-        manager.addNote("String11");
-        manager.addNote("String12");
+        NoteBook notebook = new NoteBook();
+        notebook.addNote("String0");
+        notebook.addNote("String1");
+        notebook.addNote("String2");
+        notebook.addNote("String3");
+        notebook.addNote("String4");
+        notebook.addNote("String5");
+        notebook.addNote("String6");
+        notebook.addNote("String7");
+        notebook.addNote("String8");
+        notebook.addNote("String9");
+        notebook.addNote("String10");
+        notebook.addNote("String11");
+        notebook.addNote("String12");
 
 
-        //manager.getListNotes().get(2).
+        List<Note> ln = notebook.getListNotes();
 
-
-
-
-/*
-        List<Note> ln = manager.getListNotes();
-
-        for(Note note:manager.getListNotes()){
+        for(Note note:notebook.getListNotes()){
             System.out.println(note.getNote()+ "\t" + note.getID());
         }
 
-        if(manager.deleteNote(3)){
+        if(notebook.deleteNote(3)){
             System.out.println("Succesfull deleted");
         } else{
             System.out.println("Cant delete");
         }
 
-        if(manager.deleteNote("String5")){
+        if(notebook.deleteNote("String5")){
             System.out.println("Succesfull deleted");
         } else{
             System.out.println("Cant delete");
         }
 
-        manager.setNote(6, "newString6");
-        manager.setNote("String9", "newString9");
+        if(notebook.deleteNote("String5")){
+            System.out.println("Succesfull deleted");
+        } else{
+            System.out.println("Cant delete");
+        }
+
+        notebook.setNote(6, "newString6");
+        notebook.setNote("String9", "newString9");
 
 
 
-        for(Note note:manager.getListNotes()){
+        for(Note note:notebook.getListNotes()){
             System.out.println(note.getNote()+ "\t" + note.getID());
         }
 
 
         System.out.println("---------------------------");
-        System.out.println(manager.getNote(6).getNote());
-        System.out.println(manager.getNote("String11").getNote());
-    */
+        System.out.println(notebook.getNote(6).getNote());
+        System.out.println(notebook.getNote("String11").getNote());
+
 
 
     }

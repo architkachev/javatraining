@@ -2,6 +2,11 @@ package javase01.t06.logic;
 
 public class Note {
     //public
+    /**
+     * To get ID of note
+     *
+     @return ID of note (String item in Notebook)
+     */
     public int getID() {
         return ID;
     }

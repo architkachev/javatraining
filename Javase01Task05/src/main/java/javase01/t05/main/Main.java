@@ -8,8 +8,13 @@ public class Main {
             try{
                 int n = Integer.parseInt(args[0]);
                 Matrix matrix = new Matrix(n,n);
-                matrix.setKrestX();
-                Matrix.printMatrixInConsole(matrix.getMatrix());
+                matrix.setCrossX();
+                for (int i =0; i< matrix.getHeight(); i++){
+                    for(int j =0; j< matrix.getWidth(); j++){
+                        System.out.print(matrix.getElement(i,j)+"\t");
+                    }
+                    System.out.println(" ");
+                }
             } catch (Exception e){
                 System.out.println(e.getMessage());
             }

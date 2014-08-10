@@ -5,8 +5,7 @@ public class Matrix {
 
     public Matrix(int n, int m) throws Exception {
         if((n>0)&&(m>0)){
-            int [][] mat = new int [n][m];
-            this.matrix = mat;
+            this.matrix = new int [n][m];
         } else {
             throw new Exception("Size of array must be positive");
         }
@@ -17,15 +16,18 @@ public class Matrix {
         return matrix;
     }
 
-    public static void printMatrixInConsole(int [][] matrix){
-        for (int i =0; i< matrix.length; i++){
-            for(int j =0; j< matrix[0].length; j++){
-                System.out.print(matrix[i][j]+"\t");
-            }
-            System.out.println(" ");
-        }
+    public int getElement(int i, int j){
+        return this.matrix[i][j];
     }
-    public void setKrestX() throws Exception {
+
+    public int getHeight(){
+        return this.matrix.length;
+    }
+    public int getWidth(){
+        return this.matrix[0].length;
+    }
+
+    public void setCrossX() throws Exception {
         if(this.matrix[0].length==this.matrix.length) {
             for (int i = 0; i < matrix.length; i++) {
                 this.matrix[i][i] = 1;
