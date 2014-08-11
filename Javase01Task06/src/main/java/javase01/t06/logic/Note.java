@@ -11,6 +11,9 @@ public class Note {
         return ID;
     }
 
+    /**
+     * @return
+     */
     public String getNote() {
         return note;
     }
