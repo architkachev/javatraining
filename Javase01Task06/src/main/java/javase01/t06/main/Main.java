@@ -10,6 +10,11 @@ public class Main {
         NoteBook noteBook1 = new NoteBook();
 
         NoteBookManager manager = new NoteBookManager(noteBook1);
+        //NoteBookManager manager = new NoteBookManager();
+
+
+
+        manager.manage(noteBook1);
 
         manager.addNote("String0");
         manager.addNote("String1");
@@ -21,7 +26,6 @@ public class Main {
         manager.addNote("String7");
 
         printNotes(manager);
-        System.out.println("-------------------------");
 
         NoteBook noteBook2 = new NoteBook();
         manager.manage(noteBook2);
@@ -41,13 +45,31 @@ public class Main {
         manager.addNote("String0012");
 
         printNotes(manager);
-        System.out.println("-------------------------");
+
         manager.manage(noteBook1);
 
         printNotes(manager);
 
+        if(manager.deleteNote(3)){
+            System.out.println("Succesfull deleted");
+        } else{
+            System.out.println("Cant delete");
+        }
 
-
+        manager.manage(noteBook2);
+        if(manager.deleteNote(3)){
+            System.out.println("Succesfull deleted");
+        } else{
+            System.out.println("Cant delete");
+        }
+        manager.manage(noteBook1);
+        printNotes(manager);
+        manager.manage(noteBook2);
+        printNotes(manager);
+        manager.addNote("String0013");
+        manager.addNote("String0014");
+        manager.addNote("String0015");
+        printNotes(manager);
 /*
         if(manager.deleteNote(3)){
             System.out.println("Succesfull deleted");
@@ -73,7 +95,7 @@ public class Main {
 
 
         for(Note note:manager.getUnmodifiableListNotes()){
-            System.out.println(note.getNote()+ "\t" + note.getID());
+            System.out.println(note.getNote()+ "\t" + note.getId());
         }
 
 
@@ -87,7 +109,8 @@ public class Main {
 
     public static void printNotes(NoteBookManager manager){
         for(Note note:manager.getUnmodifiableListNotes()){
-            System.out.println("Note: \""+note.getNote()+ "\"\t" + "ID: "+note.getID());
+            System.out.println("Note: \""+note.getNote()+ "\"\t" + "ID: "+note.getId());
         }
+        System.out.println("-------------------------");
     }
 }

@@ -2,25 +2,17 @@ package javase01.t06.logic;
 
 public class Note {
     //public
-    /**
-     * To get ID of note
-     *
-     @return ID of note (String item in Notebook)
-     */
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * @return
-     */
     public String getNote() {
         return note;
     }
     //friendly
     Note(String note, int id) {
         this.note = note;
-        ID = id;
+        this.id = id;
     }
 
     void setNote(String note) {
@@ -28,5 +20,5 @@ public class Note {
     }
     //private
     private String note;
-    private final int ID;
+    private final int id;
 }

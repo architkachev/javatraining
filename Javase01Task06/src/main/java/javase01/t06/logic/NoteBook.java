@@ -7,8 +7,7 @@ public class NoteBook {
     private int lastID;
 
     public NoteBook() {
-        LinkedList<Note> notes = new LinkedList<Note>();
-        this.notes = notes;
+        this.notes = new LinkedList<Note>();
         this.lastID = 0;
     }
 
