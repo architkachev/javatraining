@@ -3,6 +3,16 @@ package javase01.t04.logic;
 public class MyArray {
     private double [] array;
 
+    public MyArray(double[] array){
+        this.array = new double[array.length];
+        for(int i = 0; i<array.length; i++){
+            this.array[i]=array[i];
+        }
+    }
+    public double[] getArray() {
+        return array;
+    }
+
     public static double[] generateArray(int halfSize, double maxValue) {
         double [] a = new double[halfSize*2];
         for (int i =0; i<a.length; i++){
@@ -10,18 +20,14 @@ public class MyArray {
         }
         return a;
     }
-    public MyArray(double[] array){
-        double [] ar = new double[array.length];
-        for(int i = 0; i<ar.length; i++){
-            ar[i]=array[i];
-        }
-    }
 
-    public void printArray(int scale){
-        for(double i: this.array){
-            System.out.print(String.format("%."+scale+"f",i)+" ");
+
+    public double getElement(int i) throws Exception {
+        if(i>=0) {
+            return this.array[i];
+        } else{
+            throw new Exception("Size of array must be positive");
         }
-        System.out.println("");
     }
 
     public double findMaxSum(){

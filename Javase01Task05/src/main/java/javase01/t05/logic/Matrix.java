@@ -9,7 +9,6 @@ public class Matrix {
         } else {
             throw new Exception("Size of array must be positive");
         }
-
     }
 
     public int[][] getMatrix() {

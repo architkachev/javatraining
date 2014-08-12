@@ -70,39 +70,7 @@ public class Main {
         manager.addNote("String0014");
         manager.addNote("String0015");
         printNotes(manager);
-/*
-        if(manager.deleteNote(3)){
-            System.out.println("Succesfull deleted");
-        } else{
-            System.out.println("Cant delete");
-        }
 
-        if(manager.deleteNote("String5")){
-            System.out.println("Succesfull deleted");
-        } else{
-            System.out.println("Cant delete");
-        }
-
-        if(manager.deleteNote("String5")){
-            System.out.println("Succesfull deleted");
-        } else{
-            System.out.println("Cant delete");
-        }
-
-        manager.setNote(6, "newString6");
-        manager.setNote("String9", "newString9");
-
-
-
-        for(Note note:manager.getUnmodifiableListNotes()){
-            System.out.println(note.getNote()+ "\t" + note.getId());
-        }
-
-
-        System.out.println("---------------------------");
-        System.out.println(manager.getNote(6).getNote());
-        System.out.println(manager.getNote("String11").getNote());
-*/
 
 
     }

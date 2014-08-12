@@ -1,6 +1,9 @@
 package javase01.t06.logic;
 
 public class Note {
+    //private
+    private String note;
+    private final int id;
     //public
     public int getId() {
         return id;
@@ -18,7 +21,5 @@ public class Note {
     void setNote(String note) {
         this.note = note;
     }
-    //private
-    private String note;
-    private final int id;
+
 }

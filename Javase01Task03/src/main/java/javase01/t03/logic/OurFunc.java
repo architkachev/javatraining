@@ -3,7 +3,7 @@ package javase01.t03.logic;
 import java.util.ArrayList;
 
 public class OurFunc {
-    public static double getValue(double argument){
+    public static double getTan2xMinus3(double argument){
         return Math.tan(2*argument)-3;
     }
 
@@ -11,7 +11,7 @@ public class OurFunc {
         if((beginArg<endArg)&&(step<(endArg-beginArg))) {
             ArrayList<double[]> table = new ArrayList<double[]>();
             for (double i = beginArg; i <= endArg; i += step) {
-                table.add(new double[]{i, getValue(i)});
+                table.add(new double[]{i, getTan2xMinus3(i)});
             }
             return table;
         } else {
