@@ -17,11 +17,13 @@ public class Main {
         arrayList.add("the");
         arrayList.add("if");
 
-
         for(String string: bookManager.getListComponentsSortedByNumberIncludes(arrayList)){
             System.out.println(string);
             System.out.println(BookManager.quantityIncludesOfWordInComponent(bookManager.getBook(),string));
         }
+
+        bookManager.changeFirstAndLastWordsInEachSentence();
+        System.out.println(getStringBook(bookManager));
 
 /*
         System.out.println(getStringBook(bookManager));

@@ -6,6 +6,8 @@ import com.epam.artsiomtkachou.texteditor.composit.comparator.ComparatorByNumber
 import com.epam.artsiomtkachou.texteditor.composit.parser.Parser;
 import com.epam.artsiomtkachou.texteditor.composit.parser.ParserBlocks;
 import com.epam.artsiomtkachou.texteditor.util.TxtFileReader;
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,17 +15,22 @@ import java.util.Iterator;
 
 public class BookManager {
     private Component book;
+    private final Logger logger = Logger.getLogger(BookManager.class);
 
     public Component getBook() {
         return book;
     }
 
     public BookManager(String pathToFile) throws IOException {
-        String inputText = TxtFileReader.readFileToString(pathToFile);
-        Composite composite = new Composite();
-        Parser parser = new ParserBlocks();
-        composite.setComponentArrayList(parser.getArrayListComponents(inputText));
-        this.book = composite;
+        try{
+            String inputText = TxtFileReader.readFileToString(pathToFile);
+            Composite composite = new Composite();
+            Parser parser = new ParserBlocks();
+            composite.setComponentArrayList(parser.getArrayListComponents(inputText));
+            this.book = composite;
+        } catch (IOException e){
+            logger.info("Cant read file");
+        }
     }
 
     public ArrayList<Component> getArrayListComponents(int typeOfComponent){

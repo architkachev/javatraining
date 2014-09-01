@@ -3,6 +3,8 @@ package com.epam.artsiomtkachou.texteditor.composit.parser;
 import com.epam.artsiomtkachou.texteditor.composit.Component;
 import com.epam.artsiomtkachou.texteditor.composit.Composite;
 import com.epam.artsiomtkachou.texteditor.composit.Leaf;
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -11,10 +13,17 @@ import java.util.regex.Pattern;
 public class ParserBlocks implements Parser {
     String regexToParseBlocks;
     Parser parserSentences;
+    private final Logger logger = Logger.getLogger(ParserBlocks.class);
 
     public ParserBlocks() throws IOException {
-        this.regexToParseBlocks = Component.bundle.getString("regexp.key1");
-        parserSentences = new ParserSentences();
+        try {
+            this.regexToParseBlocks = Component.bundle.getString("regexp.key1");
+            parserSentences = new ParserSentences();
+            logger.info("ParserBlocks create succesfull");
+        } catch (IOException e){
+            logger.info("Cant create read regex 1");
+        }
+
     }
 
 
