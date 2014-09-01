@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT airport(planes)>
+<!ELEMENT planes(airliners, freighters)>
+<!ELEMENT airliners (buisness+, economy+)>
+<!ELEMENT buisness (name, maxheight,fuelconsumption,range,seating,maxspeed)>
+<!ELEMENT economy (name, maxheight,fuelconsumption,range,seating,minspeed)>
+<!ELEMENT freighters (name, maxheight,fuelconsumption,range, capacity)>
+
+
+

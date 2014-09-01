@@ -1,14 +1,15 @@
 package javase01.t06.main;
 
-import javase01.t06.logic.Note;
-import javase01.t06.logic.NoteBookManager;
-import javase01.t06.logic.NoteBook;
+import javase01.t06.logic.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String [] args){
 
         NoteBook noteBook1 = new NoteBook();
-
+        NoteBook nb = noteBook1;
         NoteBookManager manager = new NoteBookManager(noteBook1);
         //NoteBookManager manager = new NoteBookManager();
 
@@ -30,6 +31,11 @@ public class Main {
         NoteBook noteBook2 = new NoteBook();
         manager.manage(noteBook2);
 
+
+        if (nb.equals(noteBook1)){
+            System.out.println("true");
+        }
+        System.out.println(noteBook1.hashCode());
         manager.addNote("String0000");
         manager.addNote("String0001");
         manager.addNote("String0002");

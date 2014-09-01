@@ -22,4 +22,23 @@ public class Note {
         this.note = note;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Note)) return false;
+
+        Note note1 = (Note) o;
+
+        if (id != note1.id) return false;
+        if (note != null ? !note.equals(note1.note) : note1.note != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = note != null ? note.hashCode() : 0;
+        result = 31 * result + id;
+        return result;
+    }
 }

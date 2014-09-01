@@ -48,8 +48,8 @@ public class NoteBookManager {
 /**
  * Initializes a newly created {@code NoteBookManager}.
  */
-    public NoteBookManager() {
-    }
+    /*public NoteBookManager() {
+    }*/
 /**
  * Change {@code NoteBook} object, that {@code NoteBookManager} manage.
  *

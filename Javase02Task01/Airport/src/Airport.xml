@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<airport>
+	<planes>
+		<airliners>
+			<buisness>
+				<name>Boeing777</name>
+				<maxheight>10000</maxheight>
+				<fuelconsumption>500</fuelconsumption>
+				<range>10000</range>
+				<seating>400</seating>
+				<maxspeed>1000</maxspeed>
+			</buisness>
+			<economy>
+				<name>Boeing747</name>
+				<maxheight>8000</maxheight>
+				<fuelconsumption>400</fuelconsumption>
+				<range>7000</range>
+				<seating>250</seating>
+				<minspeed>400</minspeed>
+			</economy>
+		</airliners>
+		<freighters>
+				<name>AH225</name>
+				<maxheight>10000</maxheight>
+				<fuelconsumption>800</fuelconsumption>
+				<range>11000</range>
+				<capacity>300000</capacity>
+		</freighters>
+	</planes>
+</airport>
